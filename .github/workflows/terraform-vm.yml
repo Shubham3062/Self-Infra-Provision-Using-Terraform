@@ -4,7 +4,7 @@ on:
   pull_request:
     paths:
       - 'envs/dev-vm/**'
-      - 'modules/virtual_machine/**'
+      - 'modules/virtual-machine/**'
       - 'requests/dev-vm.tfvars'
 
   push:
