@@ -1,7 +1,6 @@
 name                = "devvm01"
 location            = "eastus"
 resource_group_name = "demo-rg"
-subnet_id           = "/subscriptions/670336e0-c893-40d4-b874-feba79ff379e/resourceGroups/demo-network/providers/Microsoft.Network/virtualNetworks/demo-vnet/subnets/default"
 vm_size             = "Standard_B1s"
 admin_username      = "azureuser"
 admin_password      = "SecurePass123!"
