@@ -34,8 +34,9 @@ jobs:
       run: terraform init -backend-config=envs/dev-vm/backend.tf
 
     - name: Terraform Plan
-      run: terraform plan -var-file=requests/dev-vm.tfvars
+      run: terraform plan -var-file=../../requests/dev-vm.tfvars
 
     - name: Terraform Apply
       if: github.ref == 'refs/heads/main'
       run: terraform apply -auto-approve -var-file=requests/dev-vm.tfvars
+
