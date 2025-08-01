@@ -3,7 +3,7 @@ provider "azurerm" {
 }
 
 module "vm" {
-  source              = "../../modules/virtual_machine"
+  source              = "../../modules/virtual-machine"
   name                = var.name
   location            = var.location
   resource_group_name = var.resource_group_name
@@ -14,3 +14,4 @@ module "vm" {
   environment         = var.environment
   team                = var.team
 }
+
