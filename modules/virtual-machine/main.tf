@@ -10,6 +10,20 @@ resource "azurerm_network_interface" "vm_nic" {
   }
 }
 
+resource "azurerm_virtual_network" "vm_vnet" {
+  name                = "vm-vnet"
+  address_space       = ["10.0.0.0/16"]
+  location            = var.location
+  resource_group_name = var.resource_group_name
+}
+
+resource "azurerm_subnet" "vm_subnet" {
+  name                 = "default"
+  resource_group_name  = var.resource_group_name
+  virtual_network_name = azurerm_virtual_network.vm_vnet.name
+  address_prefixes     = ["10.0.1.0/24"]
+}
+
 resource "azurerm_windows_virtual_machine" "vm" {
   name                  = var.name
   location              = var.location
@@ -36,3 +50,4 @@ resource "azurerm_windows_virtual_machine" "vm" {
     team        = var.team
   }
 }
+
