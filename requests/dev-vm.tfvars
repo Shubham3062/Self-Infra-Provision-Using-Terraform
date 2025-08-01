@@ -5,5 +5,5 @@ subnet_id           = "/subscriptions/670336e0-c893-40d4-b874-feba79ff379e/resou
 vm_size             = "Standard_B1s"
 admin_username      = "azureuser"
 admin_password      = "SecurePass123!"
-environment         = "dev"
-team                = "devops-engineer"
+environment         = "test"
+team                = "test-engineer"
