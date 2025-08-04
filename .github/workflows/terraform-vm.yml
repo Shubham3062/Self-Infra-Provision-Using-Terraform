@@ -37,8 +37,9 @@ jobs:
         run: terraform init
 
       - name: Terraform Plan
-        run: terraform plan -var-file=${{ github.workspace }}/requests/dev-vm.tfvars
+        run: terraform plan -lock=false -var-file=${{ github.workspace }}/requests/dev-vm.tfvars
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
         run: terraform apply -auto-approve -var-file=${{ github.workspace }}/requests/dev-vm.tfvars
+
