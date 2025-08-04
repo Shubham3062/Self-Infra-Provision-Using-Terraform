@@ -5,7 +5,7 @@ resource "azurerm_network_interface" "vm_nic" {
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = var.subnet_id
+    subnet_id                     = azurerm_subnet.vm_subnet.id
     private_ip_address_allocation = "Dynamic"
   }
 }
@@ -50,4 +50,5 @@ resource "azurerm_windows_virtual_machine" "vm" {
     team        = var.team
   }
 }
+
 
