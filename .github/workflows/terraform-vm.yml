@@ -41,5 +41,6 @@ jobs:
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
-        run: terraform apply -auto-approve -var-file=${{ github.workspace }}/requests/dev-vm.tfvars
+        run: terraform apply -lock=false -auto-approve -var-file=${{ github.workspace }}/requests/dev-vm.tfvars
+
 
