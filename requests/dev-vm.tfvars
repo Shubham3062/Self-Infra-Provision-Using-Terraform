@@ -1,6 +1,6 @@
 name                = "devvm01"
 location            = "eastus"
-resource_group_name = "test-demo-rg"
+resource_group_name = "demo-rg"
 vm_size             = "Standard_B1s"
 admin_username      = "azureuser"
 admin_password      = "SecurePass123!"
