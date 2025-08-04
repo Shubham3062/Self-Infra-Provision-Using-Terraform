@@ -1,3 +1,8 @@
+resource "azurerm_resource_group" "vm_rg" {
+  name     = var.resource_group_name
+  location = var.location
+}
+
 resource "azurerm_network_interface" "vm_nic" {
   name                = "${var.name}-nic"
   location            = var.location
@@ -14,7 +19,7 @@ resource "azurerm_virtual_network" "vm_vnet" {
   name                = "vm-vnet"
   address_space       = ["10.0.0.0/16"]
   location            = var.location
-  resource_group_name = var.resource_group_name
+  resource_group_name = azurerm_resource_group.vm_rg.name
 }
 
 resource "azurerm_subnet" "vm_subnet" {
@@ -51,6 +56,7 @@ resource "azurerm_windows_virtual_machine" "vm" {
     team        = var.team
   }
 }
+
 
 
 
